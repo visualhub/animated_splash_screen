@@ -7,11 +7,11 @@ class TAnimatedOpacityWidget extends StatelessWidget {
   const TAnimatedOpacityWidget({
     super.key,
     required this.duration,
-    required this.model,
+    required this.animate,
     required this.child,
   });
 
-  final AnimatedOpacityModel? model;
+  final AnimatedOpacityModel? animate;
   final int duration;
   final Widget child;
   @override
@@ -22,13 +22,15 @@ class TAnimatedOpacityWidget extends StatelessWidget {
     return Obx(
       () => AnimatedPositioned(
         duration: Duration(milliseconds: duration),
-        top: controller.animate.value ? model!.topAfter : model!.topBefore,
-        left: controller.animate.value ? model!.leftAfter : model!.leftBefore,
-        bottom:
-            controller.animate.value ? model!.bottomAfter : model!.bottomBefore,
-        right:
-            controller.animate.value ? model!.rightAfter : model!.rightBefore,
-        //width: 75,
+        top: controller.animate.value ? animate!.topAfter : animate!.topBefore,
+        left:
+            controller.animate.value ? animate!.leftAfter : animate!.leftBefore,
+        bottom: controller.animate.value
+            ? animate!.bottomAfter
+            : animate!.bottomBefore,
+        right: controller.animate.value
+            ? animate!.rightAfter
+            : animate!.rightBefore,
         child: AnimatedOpacity(
           opacity: controller.animate.value ? 1 : 0,
           duration: Duration(milliseconds: opacityDuration.toInt()),

@@ -19,7 +19,7 @@ class SplashScreen extends StatelessWidget {
           children: [
             TAnimatedOpacityWidget(
               duration: 2800,
-              model: AnimatedOpacityModel(
+              animate: AnimatedOpacityModel(
                 leftAfter: 0,
                 leftBefore: -30,
                 topAfter: 0,
@@ -32,7 +32,7 @@ class SplashScreen extends StatelessWidget {
             ),
             TAnimatedOpacityWidget(
               duration: 2800,
-              model: AnimatedOpacityModel(
+              animate: AnimatedOpacityModel(
                 topAfter: 110,
                 topBefore: 110,
                 leftBefore: -80,
@@ -51,7 +51,7 @@ class SplashScreen extends StatelessWidget {
             ),
             TAnimatedOpacityWidget(
               duration: 3000,
-              model: AnimatedOpacityModel(bottomBefore: 30, bottomAfter: 75),
+              animate: AnimatedOpacityModel(bottomBefore: 30, bottomAfter: 75),
               child: Image.asset(
                 tSplashImage,
                 height: 360,

@@ -18,7 +18,7 @@ class AnimatedOpacityController extends GetxController {
     await Future.delayed(
       const Duration(milliseconds: 2000),
     );
-    // ignore: use_build_context_synchronously
+
     Get.to(
       () => const HomePage(),
     );
